@@ -1,0 +1,24 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result Page</title>
+</head>
+<body>
+    <h1>Result Page</h1>
+    <div id="resultData"></div>
+
+    <script>
+        // Retrieve data from session storage
+        const storedData = sessionStorage.getItem('apiData');
+
+        if (storedData) {
+            const data = JSON.parse(storedData);
+            const resultDataElement = document.getElementById('resultData');
+
+            // Display data on the result page
+            resultDataElement.textContent = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
